@@ -8135,6 +8135,7 @@ h1, h2, h3, h4, h5,
       .ftco-navbar-light .navbar-nav > .nav-item.active > a {
         color: #29a6b1; } }
   .ftco-navbar-light .navbar-toggler {
+    width: 110px;
     border: none;
     color: rgba(255, 255, 255, 0.5) !important;
     cursor: pointer;
