@@ -8724,7 +8724,7 @@ textarea.form-control {
 .ftco-footer {
   font-size: 16px;
   background: black;
-  padding: 1.6em 5em 0;
+  padding: 2.6em 5em 0;
   z-index: 0; }
   .ftco-footer .ftco-footer-logo {
     text-transform: uppercase;
@@ -9554,7 +9554,7 @@ textarea.form-control {
 }
 
 .service-icons img {
-  width: 200px;
+  width: 250px;
   height: auto;
 }
 
@@ -9685,7 +9685,7 @@ animation: containerFadeIn 1.5s ease-in-out forwards;
 
 .container {
 text-align: center;
-max-width: 900px;
+max-width: 960px;
 margin: 0 auto;
 }
 
