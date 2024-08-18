@@ -8051,13 +8051,13 @@ h1, h2, h3, h4, h5,
     padding: 0; }
   .ftco-navbar-light .navbar-brand {
     color: #fff;
-    /* padding-top: 1.5rem;
-    padding-bottom: 1.5rem; */ }
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;  }
     @media (max-width: 991.98px) {
       .ftco-navbar-light .navbar-brand {
         color: #fff;
-        padding-top: 1rem;
-        padding-bottom: 1rem; } }
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;  } } 
   .ftco-navbar-light .navbar-nav {
     margin-right: 1em; }
     @media (max-width: 991.98px) {
@@ -8205,7 +8205,7 @@ h1, h2, h3, h4, h5,
       .ftco-navbar-light.scrolled .nav-link.active {
         color: #f9ab30 !important; }
     .ftco-navbar-light.scrolled.awake {
-      padding: 12px;
+      padding: 6px;
       margin-top: 0px;
       -webkit-transition: .3s all ease-out;
       -o-transition: .3s all ease-out;
@@ -8259,7 +8259,7 @@ h1, h2, h3, h4, h5,
     background: -webkit-linear-gradient(45deg, #2f88fc 0%, #ff5959 100%);
     background: -o-linear-gradient(45deg, #2f88fc 0%, #ff5959 100%);
     background: -ms-linear-gradient(45deg, #2f88fc 0%, #ff5959 100%);
-    background: linear-gradient(45deg, #2f88fc 0%, #000000 100%);
+    background: linear-gradient(45deg, #194378 0%, #000000 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f88fc', endColorstr='#ff5959', GradientType=1 ); }
   .hero-wrap.hero-wrap-2 .overlay {
     background-size: cover !important;
@@ -8267,6 +8267,13 @@ h1, h2, h3, h4, h5,
     height: 55vh;
     width: 100%;
     opacity: .7; }
+
+    @media (max-width: 768px) { /* Adjust this breakpoint as needed */
+      .hero-wrap.hero-wrap-2 .overlay {
+          height: 63.1vh;
+      }
+  }
+
 
 .slider-text .text {
   width: 100%; }
@@ -8639,6 +8646,7 @@ textarea.form-control {
   font-size: 24px; }
 
 .ftco-section {
+  margin-top: 50px;
   padding: 4em 0;
   position: relative;
   width: 100%; }
@@ -8715,8 +8723,8 @@ textarea.form-control {
 
 .ftco-footer {
   font-size: 16px;
-  background: #201e25;
-  padding: 2.5em 5em 0;
+  background: black;
+  padding: 2.1em 5em 0;
   z-index: 0; }
   .ftco-footer .ftco-footer-logo {
     text-transform: uppercase;
@@ -10020,7 +10028,7 @@ button {
 }
 
 button:hover {
-  background-color: #238b94;
+  /* background-color: #238b94; */
 }
 
 .Agent_Registration_services-container p {
