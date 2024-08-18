@@ -9707,7 +9707,7 @@ animation: gridFadeIn 2s ease-in-out forwards;
 }
 
 .feature-card {
-background-color: #333842;
+background-color: #29a6b1;
 padding: 30px;
 border-radius: 15px;
 display: flex;
@@ -9752,7 +9752,7 @@ transform: scale(1);
 }
 
 .feature-card i {
-color: #e74c3c;
+color: white;
 margin-right: 20px;
 font-size: 28px;
 transition: color 0.5s ease, transform 0.5s ease;
