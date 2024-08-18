@@ -9640,8 +9640,17 @@ textarea.form-control {
 
 @media (max-width: 480px) {
   .service-icons {
+    margin-left: -15px;
       width: 200px;
       height: 200px;
+  }
+  .service-details {
+    margin-top: -68px;
+        margin-left: -101px;
+        max-width: 100%;
+  }
+  .Features_Container {
+    padding-top: 464px !important ;
   }
 
   .service-icons img {
