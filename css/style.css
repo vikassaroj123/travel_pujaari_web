@@ -3756,9 +3756,9 @@ input[type="button"].btn-block {
 .navbar-dark .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.5); }
   .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
-    color: rgba(255, 255, 255, 0.75); }
+    color: #29a6b1 !important; }
   .navbar-dark .navbar-nav .nav-link.disabled {
-    color: rgba(255, 255, 255, 0.25); }
+    color: #29a6b1 !important; }
 
 .navbar-dark .navbar-nav .show > .nav-link,
 .navbar-dark .navbar-nav .active > .nav-link,
@@ -8028,6 +8028,7 @@ h1, h2, h3, h4, h5,
   color: #f9ab30 !important; }
 
 .ftco-navbar-light {
+  padding: 15px;
   background: transparent !important;
   /* background-color: white !important; */
   border-bottom: 1px solid #a7a4a4;
@@ -8050,8 +8051,8 @@ h1, h2, h3, h4, h5,
     padding: 0; }
   .ftco-navbar-light .navbar-brand {
     color: #fff;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem; }
+    /* padding-top: 1.5rem;
+    padding-bottom: 1.5rem; */ }
     @media (max-width: 991.98px) {
       .ftco-navbar-light .navbar-brand {
         color: #fff;
@@ -8066,13 +8067,13 @@ h1, h2, h3, h4, h5,
         margin-right: 0; } }
     .ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
       font-size: 16px;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    padding-left: 15px;
-    padding-right: 21px;
-    color: white;
-    font-weight: 400;
-    opacity: 1 !important; }
+      padding-top: 1rem;
+      /* padding-bottom: 1.5rem; */
+      padding-left: 15px;
+      padding-right: 21px;
+      color: white;
+      font-weight: 400;
+      opacity: 1 !important; }
       .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover, .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:focus {
         color: #000000; }
       @media (max-width: 991.98px) {
@@ -8129,10 +8130,10 @@ h1, h2, h3, h4, h5,
       border: 1px solid #ff5959;
       background: #ff5959 !important; }
     .ftco-navbar-light .navbar-nav > .nav-item.active > a {
-      color: #3092b7; }
+      color: #29a6b1; }
     @media (max-width: 991.98px) {
       .ftco-navbar-light .navbar-nav > .nav-item.active > a {
-        color: #3092b7; } }
+        color: #29a6b1; } }
   .ftco-navbar-light .navbar-toggler {
     border: none;
     color: rgba(255, 255, 255, 0.5) !important;
@@ -8214,8 +8215,8 @@ h1, h2, h3, h4, h5,
       transition: .3s all ease-out; }
     .ftco-navbar-light.scrolled .navbar-brand {
       color: #fff;
-      padding-top: 1rem;
-      padding-bottom: 1rem; }
+      /* padding-top: 1rem;
+      padding-bottom: 1rem; */} 
 
 .navbar-brand {
   font-weight: 700;
@@ -8250,21 +8251,21 @@ h1, h2, h3, h4, h5,
     bottom: 0;
     content: '';
     opacity: .4;
-    background: #000000;
+    background-color: #494620;
     background: #2f88fc;
     background: -moz-linear-gradient(45deg, #2f88fc 0%, #ff5959 100%);
     background: -webkit-gradient(left bottom, right top, color-stop(0%, #2f88fc), color-stop(100%, #ff5959));
     background: -webkit-linear-gradient(45deg, #2f88fc 0%, #ff5959 100%);
     background: -o-linear-gradient(45deg, #2f88fc 0%, #ff5959 100%);
     background: -ms-linear-gradient(45deg, #2f88fc 0%, #ff5959 100%);
-    background: linear-gradient(45deg, #2f88fc 0%, #ff5959 100%);
+    background: linear-gradient(45deg, #2f88fc 0%, #000000 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f88fc', endColorstr='#ff5959', GradientType=1 ); }
   .hero-wrap.hero-wrap-2 .overlay {
     background-size: cover !important;
     background-position: center !important;
     height: 55vh;
     width: 100%;
-    opacity: .2; }
+    opacity: .7; }
 
 .slider-text .text {
   width: 100%; }
@@ -9506,8 +9507,9 @@ textarea.form-control {
 } */
 
 .service-section {
+  margin-top: 29px;
   text-align: center;
-  padding: 77px 20px;
+  padding: 30px 20px;
   /* margin: 50px auto; */
 }
 
@@ -9519,13 +9521,14 @@ textarea.form-control {
 }
 
 .service-content {
-  gap: 7rem;
+  gap: 9rem;
   padding: 36px 0px;
   /* margin: 15px 0px; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin-left: 68px;
 }
 
 .service-icons {
@@ -9569,7 +9572,9 @@ textarea.form-control {
 .icon-6 { top: 30%; left: 90%; transform: translate(-50%, -50%); }
 
 .service-details {
-  max-width: 600px;
+  margin-top: -13px;
+  width: 600px !important;
+  max-width: 601px;
   text-align: left;
   /* margin-top: 20px; */
 }
@@ -9656,7 +9661,7 @@ textarea.form-control {
 
 /* Feature Part start from here */
 .Features_Container {
-background-color: #282c34;
+/* background-color: #282c34; */
 color: white;
 overflow-x: hidden;
 perspective: 1000px;
@@ -9684,6 +9689,7 @@ animation: slideDown 1s ease-out forwards;
 }
 
 .features-title p {
+  color: black;
 font-size: 20px;
 margin-bottom: 50px;
 line-height: 1.6;
@@ -9850,3 +9856,395 @@ transform: rotate(360deg) scale(1.2);
 }
 }
 /* Feature Part end here */
+
+/* Product part start from here */
+.Product_Container {
+  margin-top: 55px !important;
+  max-width: 1302px;
+    margin: auto;
+    margin-bottom: 60px !important;
+}
+
+.Product_Heading {
+  color: #29a6b1;
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center; /* Centered heading */
+  margin-bottom: 20px;
+}
+
+.Product_Description {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.Product_Title {
+  color: #29a6b1;
+  font-size: 22px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.Product_Title::before {
+  content: "";
+  width: 4px;
+  height: 24px;
+  background-color: #29a6b1;
+  margin-right: 10px;
+}
+
+.Product_List {
+  list-style: none;
+  padding-left: 0;
+  font-size: 16px;
+}
+
+.Product_ListItem {
+  margin-bottom: 15px;
+  text-align: justify;
+  line-height: 1.8;
+  padding-left: 20px; /* Indentation for better readability */
+  position: relative;
+}
+
+.Product_ListItem::before {
+  content: "•";
+  color: #29a6b1; /* Matching bullet color with theme */
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@media (max-width: 768px) {
+  .Product_Heading {
+      font-size: 24px;
+  }
+
+  .Product_Title {
+      font-size: 20px;
+  }
+
+  .Product_ListItem {
+      font-size: 15px;
+  }
+}
+/* Product part end here */
+
+/* Agent Rgistration start from here */
+.Agent_container {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 52px 0px;
+  /* height: 100vh; */
+}
+
+.Agent_Registration_container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 1100px;
+  width: 90%;
+}
+
+.Agent_Registration_form-container,
+.Agent_Registration_services-container {
+  padding: 30px;
+  width: 100%;
+}
+
+.Agent_Registration_form-container {
+  border-right: 1px solid #e0e0e0;
+}
+
+@media (min-width: 768px) {
+  .Agent_Registration_container {
+      flex-direction: row;
+  }
+}
+
+h2 {
+  color: #29a6b1;
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.Agent_Registration_section-title {
+  color: #29a6b1;
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.Agent_Registration_form-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.Agent_Registration_form-group input,
+.Agent_Registration_form-group select {
+  width: calc(50% - 8px);
+  padding: 12px;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.Agent_Registration_form-group input:last-child,
+.Agent_Registration_form-group select:last-child {
+  margin-right: 0;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #29a6b1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #238b94;
+}
+
+.Agent_Registration_services-container p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.Agent_Registration_services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.Agent_Registration_service-item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #29a6b1;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.Agent_Registration_service-item i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.Agent_Registration_service-item:hover {
+  background-color: #29a6b1;
+  color: white;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+label {
+  font-size: 14px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .Agent_Registration_form-group input,
+  .Agent_Registration_form-group select {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 10px;
+  }
+}
+/* Agent Registartion end here */
+
+.Travel_Agent {
+  background-color: #fff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.Travel_Agent_container {
+  max-width: 1300px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.Travel_Agent_header {
+  font-weight: 600;
+  color: #29a6b1;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.Travel_Agent_paragraph {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.Travel_Agent_steps {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.Travel_Agent_steps li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.Travel_Agent_steps strong {
+  font-weight: 500;
+  color: #29a6b1;
+}
+
+.Travel_Agent_subheader {
+  color: #29a6b1;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #29a6b1;
+}
+
+.Travel_Agent_faq {
+  margin-top: 30px;
+}
+
+.Travel_Agent_faq_item {
+  margin-bottom: 10px;
+  border-top: 1px solid #e9e9e9;
+  padding-top: 10px;
+}
+
+.Travel_Agent_faq_title {
+  font-size: 18px;
+  color: #29a6b1;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #e9e9e9;
+  border-radius: 5px;
+}
+
+.Travel_Agent_faq_title:hover {
+  background-color: #f1f1f1;
+}
+
+.Travel_Agent_faq_title::after {
+  content: '\002B'; /* Plus sign */
+  font-size: 20px;
+  color: #29a6b1;
+}
+
+.Travel_Agent_faq_item.active .Travel_Agent_faq_title::after {
+  content: '\2212'; /* Minus sign */
+}
+
+.Travel_Agent_faq_content {
+  font-size: 16px;
+  margin-top: 5px;
+  line-height: 1.8;
+  display: none;
+  padding: 10px;
+  border-left: 3px solid #29a6b1;
+  background-color: #f9f9f9;
+  border-radius: 0 5px 5px 5px;
+}
+
+.Travel_Agent_faq_item.active .Travel_Agent_faq_content {
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .Travel_Agent_container {
+      padding: 10px;
+      margin: 20px auto;
+  }
+
+  .Travel_Agent_header {
+      font-size: 22px;
+      margin-bottom: 15px;
+  }
+
+  .Travel_Agent_paragraph {
+      font-size: 14px;
+      margin-bottom: 15px;
+  }
+
+  .Travel_Agent_steps li {
+      font-size: 14px;
+  }
+
+  .Travel_Agent_subheader {
+      font-size: 18px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      padding-bottom: 3px;
+  }
+
+  .Travel_Agent_faq_title {
+      font-size: 16px;
+      padding: 8px;
+  }
+
+  .Travel_Agent_faq_content {
+      font-size: 14px;
+      padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Travel_Agent_container {
+      padding: 5px;
+      margin: 10px auto;
+  }
+
+  .Travel_Agent_header {
+      font-size: 20px;
+  }
+
+  .Travel_Agent_paragraph {
+      font-size: 13px;
+  }
+
+  .Travel_Agent_steps li {
+      font-size: 13px;
+  }
+
+  .Travel_Agent_subheader {
+      font-size: 16px;
+  }
+
+  .Travel_Agent_faq_title {
+      font-size: 14px;
+      padding: 6px;
+  }
+
+  .Travel_Agent_faq_content {
+      font-size: 13px;
+      padding: 6px;
+  }
+}
