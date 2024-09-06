@@ -18,6 +18,11 @@
   left: 115px;
   transform: translateY(-50%);
 }
+
+#carousel-heading {
+  color: rgb(0, 0, 0);
+  font-size: 4rem;
+}
 #carousel-description {
   width: 878px;
   height: 96px;
@@ -34,6 +39,7 @@
   align-items: center;
   gap: 10px;
   margin-top: 40px;
+  border-radius: 100px;
 }
 
 .explore-arrow {
@@ -46,9 +52,11 @@
   display: flex;
   flex-direction: column;
   width: fit-content;
-
+  font-size: 1.5rem;
   position: absolute;
   top: 340px;
+  color: #ff5733; /* Set color */
+  transition: color 0.3s ease;
 }
 
 .social-icon {
@@ -207,14 +215,19 @@
 @media (max-width: 600px) {
   .section-container {
     height: 150vh;
-    top: 0px;
+    top: 0;
     margin-bottom: 200px;
   }
+
   .left-paragraph {
     top: 25%;
     left: 2%;
     min-width: 90%;
     font-size: 14px;
+  }
+
+  #carousel-heading {
+    font-size: 2rem; /* Adjusted size for mobile */
   }
 
   .explore-button {
@@ -223,26 +236,20 @@
   }
 
   .social-icons {
-    display: flex;
     flex-direction: row;
     gap: 10px;
     top: 110%;
   }
 
   .gallery-container {
-    display: flex;
-    justify-content: end;
-    align-items: end;
-    transform: none;
-    height: 300px;
-    top: 250px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 800px; /* Adjusted spacing from bottom */
+    right: 0px; /* Adjusted spacing from right */
+    height: 100%;
   }
 
   .gallery-item {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 200px;
   }
 
   .gallery-controls-previous {
@@ -262,6 +269,10 @@
     font-size: 16px;
   }
 
+  #carousel-heading {
+    font-size: 3rem; /* Adjusted size for tablets */
+  }
+
   .explore-button {
     width: 40%;
     height: 45px;
@@ -272,9 +283,8 @@
   }
 
   .gallery-container {
-    top: 150px;
-    left: 0;
-    transform: none;
+    bottom: 15px; /* Adjusted spacing from bottom */
+    right: 15px; /* Adjusted spacing from right */
   }
 
   .gallery-item {
@@ -299,24 +309,37 @@
     font-size: 18px;
   }
 
+  #carousel-heading {
+    font-size: 3.5rem; /* Adjusted size for laptops */
+  }
+
   .explore-button {
     width: 30%;
     height: 45px;
   }
 
   .social-icons {
-    top: 130%;
+    top: 140%;
   }
 
   .gallery-container {
-    top: 200px;
-    left: 0;
-    transform: none;
+    bottom: 10px; /* Adjusted spacing from bottom */
+    right: 10px; /* Adjusted spacing from right */
   }
 
   .gallery-item {
+    width: 150px;
+    height: 250px;
+  }
+
+  .gallery-item-2,
+  .gallery-item-4 {
     width: 200px;
-    height: 200px;
+    height: 300px;
+  }
+  .gallery-item-3 {
+    width: 200px;
+    height: 350px;
   }
 
   .gallery-controls-previous {
