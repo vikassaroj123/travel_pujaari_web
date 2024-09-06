@@ -172,12 +172,12 @@
 }
 
 .gallery-controls-previous {
-  left: -165%;
+  left: -125%;
   padding: 10px;
 }
 
 .gallery-controls-next {
-  right: -165%;
+  right: -125%;
   padding: 10px;
 }
 
@@ -243,24 +243,25 @@
     padding: 0;
   }
   #carousel-description {
-    width: 60%;
+    width: 50%;
     height: fit-content;
   }
 
   .social-icons {
     font-size: 1.2rem;
-    top: 380px;
+    top: 340px;
   }
   .gallery {
     height: 100%;
+    width: 100%;
   }
   .gallery-container {
     height: 100%;
     margin: 0 0;
-    max-width: 100%;
+    width: 100%;
     position: relative;
-    top: 30%;
-    left: 70%;
+    top: 25%;
+    left: 80%;
   }
 
   .gallery-item {
@@ -269,13 +270,26 @@
   }
 
   .gallery-item-1 {
-    left: 27%;
+    left: 35%;
   }
 
   .gallery-item-2,
   .gallery-item-4 {
     height: 208px;
     width: 140px;
+  }
+  .gallery-item-2 {
+    left: 42%;
+  }
+
+  .gallery-item-3 {
+    left: 50%;
+  }
+  .gallery-item-4 {
+    left: 58%;
+  }
+  .gallery-item-5 {
+    left: 65%;
   }
 
   .gallery-item-3 {
@@ -319,9 +333,15 @@
   .gallery-item-5 {
     left: 65%;
   }
+  .gallery-controls-previous {
+    left: -145%;
+  }
+  .gallery-controls-next {
+    right: -145%;
+  }
 }
 
-@media (min-width: 700px) {
+@media (max-width: 1000px) {
   /* Carousel Styles */
 
   .section-container {
@@ -364,7 +384,7 @@
   }
 
   .gallery-item-1 {
-    left: 27%;
+    left: 35%;
   }
 
   .gallery-item-2,
@@ -374,7 +394,13 @@
   }
 
   .gallery-item-2 {
-    left: 37%;
+    left: 42%;
+  }
+  .gallery-item-4 {
+    left: 58%;
+  }
+  .gallery-item-5 {
+    left: 65%;
   }
 
   .gallery-item-3 {
@@ -397,11 +423,11 @@
   }
 
   .gallery-controls-previous {
-    left: -165%;
+    left: -135%;
   }
 
   .gallery-controls-next {
-    right: -165%;
+    right: -135%;
   }
 
   .gallery-controls-previous::before,
@@ -411,17 +437,21 @@
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
   .section-container {
     top: 0px;
   }
+
   .left-paragraph {
     top: 40%;
     left: 8%;
   }
+  #carousel-heading {
+    font-size: 3rem;
+  }
 
   #carousel-description {
-    width: 90%;
+    width: 85%;
   }
 
   .explore-arrow {
@@ -438,8 +468,68 @@
     top: 110%;
     gap: 20px;
   }
-  .gallery {
+
+  /* Hide the smaller carousel on screens below 600px */
+  .gallery-item {
     display: none;
+  }
+  /* Ensure gallery container remains visible */
+  .gallery {
+    display: block; /* Keep the parent visible */
+    position: relative;
+    width: 100%; /* Ensure it takes full width */
+    height: 100%; /* Adjust the height based on content */
+  }
+
+  .gallery-controls {
+    display: flex;
+    position: absolute;
+    left: 0;
+    width: 100%; /* Make the controls span across the full width */
+    transform: translateY(-50%);
+    pointer-events: auto;
+    z-index: 10;
+    justify-content: space-between; /* Place the controls on left and right sides */
+  }
+
+  .gallery-controls-previous,
+  .gallery-controls-next {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none !important;
+    border: 3px solid #ff5733;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Add padding for clickability */
+    z-index: 20;
+  }
+  .gallery-controls-previous {
+    position: absolute;
+    left: 10px;
+  }
+  .gallery-controls-next {
+    position: absolute;
+    right: 10px;
+  }
+
+  .gallery-controls-previous::before,
+  .gallery-controls-next::before {
+    content: "";
+    display: inline-block;
+    border: solid #ff5733;
+    border-width: 0 5px 5px 0;
+    padding: 5px;
+  }
+
+  .gallery-controls-previous::before {
+    transform: rotate(135deg);
+  }
+
+  .gallery-controls-next::before {
+    transform: rotate(-45deg);
   }
 }
 

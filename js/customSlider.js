@@ -13,6 +13,7 @@ class Carousel {
     this.navItems = navItems;
     this.sectionContainer = section;
     this.currentIndex = 2;
+    this.autoSlideInterval = null; // Store the interval ID for autoplay
   }
 
   updateGallery() {
@@ -32,7 +33,7 @@ class Carousel {
     });
 
     this.updateBackgroundImage(); // Update background image
-    this.updateNavIndicators();
+    this.updateNavIndicators(); // Update navigation indicators
   }
 
   updateBackgroundImage() {
@@ -95,8 +96,20 @@ class Carousel {
       control.addEventListener("click", (e) => {
         e.preventDefault();
         this.setCurrentState(control);
+        this.resetAutoSlide(); // Reset autoplay interval when manually clicking
       });
     });
+  }
+
+  startAutoSlide(intervalTime = 3000) {
+    this.autoSlideInterval = setInterval(() => {
+      this.setCurrentState({ className: "gallery-controls-next" }); // Move to the next slide
+    }, intervalTime);
+  }
+
+  resetAutoSlide(intervalTime = 3000) {
+    clearInterval(this.autoSlideInterval); // Stop the current interval
+    this.startAutoSlide(intervalTime); // Restart autoplay
   }
 }
 
@@ -111,3 +124,4 @@ const exampleCarousel = new Carousel(
 exampleCarousel.setControls();
 exampleCarousel.updateGallery(); // Initialize gallery with the correct state
 exampleCarousel.useControls();
+exampleCarousel.startAutoSlide(3000); // Start autoplay with a 5-second interval
