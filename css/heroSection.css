@@ -14,8 +14,8 @@
 
 .left-paragraph {
   position: absolute;
-  top: 190px;
-  left: 115px;
+  top: 240px;
+  left: 90px;
   transform: translateY(-50%);
 }
 
@@ -76,7 +76,7 @@
   max-width: 1000px;
   position: relative;
   justify-content: center;
-  top: 280px;
+  top: 295px;
   left: 60%;
   transform: translateX(-50%);
 }
