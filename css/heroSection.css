@@ -7,7 +7,7 @@
   background-position: center;
   background-repeat: no-repeat;
   color: white;
-  top: 80px;
+  top: 0px;
   margin-bottom: 80px;
   overflow: hidden;
 }
@@ -228,7 +228,7 @@
 
   .section-container {
     color: white;
-    top: 85px;
+    top: 0px;
     overflow: hidden;
     margin-bottom: 160px;
   }

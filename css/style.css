@@ -594,6 +594,16 @@ pre code {
     max-width: 1140px;
   }
 }
+@media (min-width: 992px) {
+  .nv-container {
+    min-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .nv-container {
+    min-width: 1140px;
+  }
+}
 
 .container-fluid {
   width: 100%;
@@ -10621,6 +10631,7 @@ h5,
   -ms-border-radius: 2px;
   border-radius: 2px;
 }
+
 .ftco-navbar-light .navbar-nav > .nav-item.cta > a span {
   display: inline-block;
   color: #fff;
@@ -11779,7 +11790,7 @@ textarea.form-control {
 .ftco-counter .text strong.number {
   font-weight: 600;
   font-size: 28px;
-  color: #29A6B1;
+  color: #29a6b1;
 }
 
 .ftco-counter .text span {
@@ -13595,4 +13606,4 @@ label {
     font-size: 14px;
   }
 }
-/* end here */
+/* end here */F
