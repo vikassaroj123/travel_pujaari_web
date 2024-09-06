@@ -26,17 +26,31 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/heroSection.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<style>
+		@media (min-width: 1000px) {
+		.navbar-nav{
+			display: flex;
+			gap: 20px;
+		}
+		}
+		@media (min-width: 1200px) {
+		.navbar-nav{
+			display: flex;
+			gap: 60px;
+		}
+		}
+	</style>
   </head>
   <body>
 	
-	  <nav class="navbar navbar-expand-lg ftco-navbar-light" id="ftco-navbar">
+	  <nav class="navbar navbar-expand-lg ftco-navbar-light" style="overflow: hidden;" id="ftco-navbar">
 	    <div class="container mw-100">
 	      <a class="navbar-brand" href="/"><img src="/images/logo.png" alt=""></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav" style="display: flex; gap: 60px;">
+	        <ul class="navbar-nav">
 	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
 	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
 	          <li class="nav-item"><a href="destination.html" class="nav-link">Our Services</a></li>
@@ -76,6 +90,7 @@
                 data-heading="BALI"
                 data-description="Dream Island Bali is also known as ‘The Island of Gods’ since it is home to several thousands of temples. You will find that the Balinese Hindu temples are unique as they display a seamless confluence of Indian culture and Bali’s traditional beliefs. As magnificent, intricate structures or as small shrines, most ancient temples in Bali are popular attractions that allow you to explore its fascinating history and traditions."
                 data-index="1"
+				loading="lazy"
             />
             <img
                 class="gallery-item gallery-item-2"
@@ -83,6 +98,7 @@
                 data-heading="BALI"
                 data-description="You will love leisurely lounging on spectacular beaches with our Bali tour packages! Bali boasts of a fabulous coastline with beaches that differ from one area to another. While some offer you pristine white sand and turquoise waters, others have black volcanic beaches. You can choose your beaches per the activities you intend to take."
                 data-index="2"
+				loading="lazy"
             />
             <img
                 class="gallery-item gallery-item-3"
@@ -90,6 +106,7 @@
                 data-heading="BALI"
                 data-description="When you choose the neighborhood to stay in or spend your time in Bali, choose the most popular ones. The dream island Bali is home to some smaller neighboring islands that are part of the total nine districts."
                 data-index="3"
+				loading="lazy"
             />
             <img
                 class="gallery-item gallery-item-4"
@@ -97,6 +114,7 @@
                 data-heading="BALI"
                 data-description="The latest Instagram spot associated with Bali is the Bali Swing. This spot is quite popular with honeymooners and is part of our Bali honeymoon packages. As you experience the various levels of swings, you get clicked up high in the air with lush greenery as the backdrop. Most Bali swing places also have props like a giant nest, basket, etc., for you to take pictures with your loved one."
                 data-index="4"
+				loading="lazy"
             />
             <img
                 class="gallery-item gallery-item-5"
@@ -104,16 +122,17 @@
                 data-heading="BALI"
                 data-description="Our Bali trip packages can customize by visiting Bali Safari & Marine Park with your family. Observe more than 100 species of unique animals, including some rare and endangered species. You can also look at exhibits featuring the Sumatran elephant, Sumatran tiger, white tiger, leopard, Komodo dragon, etc."
                 data-index="5"
+				loading="lazy"
             />
 			  <div class="gallery-controls"></div>
 			  <!-- Indicator bars for images -->
-			  <ul class="gallery-nav">
+			  <!-- <ul class="gallery-nav">
 				<li class="nav-item"></li>
 				<li class="nav-item"></li>
 				<li class="nav-item"></li>
 				<li class="nav-item"></li>
 				<li class="nav-item"></li>
-			  </ul>
+			  </ul> -->
 			</div>
 		  </div>
 	  </section>
