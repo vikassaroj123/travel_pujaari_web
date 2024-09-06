@@ -446,6 +446,7 @@
     top: 40%;
     left: 8%;
   }
+
   #carousel-heading {
     font-size: 3rem;
   }
@@ -473,23 +474,24 @@
   .gallery-item {
     display: none;
   }
+
   /* Ensure gallery container remains visible */
   .gallery {
-    display: block; /* Keep the parent visible */
+    display: block;
     position: relative;
-    width: 100%; /* Ensure it takes full width */
-    height: 100%; /* Adjust the height based on content */
+    width: 100%;
+    height: 100%;
   }
 
+  /* Center controls vertically and place them on the extreme left and right */
   .gallery-controls {
     display: flex;
     position: absolute;
-    left: 0;
-    width: 100%; /* Make the controls span across the full width */
-    transform: translateY(-50%);
+    top: 20%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust to center controls */
     pointer-events: auto;
     z-index: 10;
-    justify-content: space-between; /* Place the controls on left and right sides */
+    justify-content: space-between; /* Place controls at the far left and right */
   }
 
   .gallery-controls-previous,
@@ -503,16 +505,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px; /* Add padding for clickability */
+    padding: 10px;
     z-index: 20;
   }
+
+  /* Position the previous button on the far left */
   .gallery-controls-previous {
-    position: absolute;
-    left: 10px;
+    position: relative;
+    left: 0%; /* Adjust distance from the left edge */
   }
+
+  /* Position the next button on the far right */
   .gallery-controls-next {
-    position: absolute;
-    right: 10px;
+    position: relative;
+    left: 0%; /* Adjust distance from the right edge */
   }
 
   .gallery-controls-previous::before,
