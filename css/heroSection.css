@@ -7,7 +7,7 @@
   background-position: center;
   background-repeat: no-repeat;
   color: white;
-  top: 87px;
+  top: 80px;
   margin-bottom: 80px;
   overflow: hidden;
 }
@@ -228,7 +228,7 @@
 
   .section-container {
     color: white;
-    top: 96px;
+    top: 85px;
     overflow: hidden;
     margin-bottom: 160px;
   }
@@ -471,71 +471,8 @@
   }
 
   /* Hide the smaller carousel on screens below 600px */
-  .gallery-item {
-    display: none;
-  }
-
-  /* Ensure gallery container remains visible */
   .gallery {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-
-  /* Center controls vertically and place them on the extreme left and right */
-  .gallery-controls {
-    display: flex;
-    position: absolute;
-    top: 20%; /* Center vertically */
-    transform: translateY(-50%); /* Adjust to center controls */
-    pointer-events: auto;
-    z-index: 10;
-    justify-content: space-between; /* Place controls at the far left and right */
-  }
-
-  .gallery-controls-previous,
-  .gallery-controls-next {
-    background-color: transparent;
-    cursor: pointer;
-    border: none;
-    outline: none !important;
-    border: 3px solid #ff5733;
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    z-index: 20;
-  }
-
-  /* Position the previous button on the far left */
-  .gallery-controls-previous {
-    position: relative;
-    left: 0%; /* Adjust distance from the left edge */
-  }
-
-  /* Position the next button on the far right */
-  .gallery-controls-next {
-    position: relative;
-    left: 0%; /* Adjust distance from the right edge */
-  }
-
-  .gallery-controls-previous::before,
-  .gallery-controls-next::before {
-    content: "";
-    display: inline-block;
-    border: solid #ff5733;
-    border-width: 0 5px 5px 0;
-    padding: 5px;
-  }
-
-  .gallery-controls-previous::before {
-    transform: rotate(135deg);
-  }
-
-  .gallery-controls-next::before {
-    transform: rotate(-45deg);
+    display: none;
   }
 }
 
