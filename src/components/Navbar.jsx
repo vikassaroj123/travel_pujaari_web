@@ -94,7 +94,10 @@ const Navbar = () => {
                 Contact
               </NavLink>
             </li>
-            <li className={`nav-item cta `}>
+            <li
+              className={`nav-item cta `}
+              style={{ display: "flex" }} // Added inline styling
+            >
               {user ? (
                 <NavLink className="nav-link" onClick={handleLogout}>
                   Log Out
