@@ -1,7 +1,31 @@
-import React from "react";
-import { NavLink } from "react-router-dom"; // Import NavLink for active link styling
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+import { auth } from "../firebase.js"; // Adjust the path to your firebase.js
 
 const Navbar = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      console.log(currentUser);
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+        console.log("User signed out");
+      })
+      .catch((error) => {
+        // An error happened.
+        console.error("Error signing out: ", error);
+      });
+  };
+
   return (
     <nav
       className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
@@ -70,14 +94,25 @@ const Navbar = () => {
                 Contact
               </NavLink>
             </li>
-            <li
-              className={`nav-item cta ${
-                window.location.pathname === "/register-now" ? "active" : ""
-              }`}
-            >
-              <NavLink to="/register-now" className="nav-link">
-                Register Now
-              </NavLink>
+            <li className={`nav-item cta `}>
+              {user ? (
+                <NavLink className="nav-link" onClick={handleLogout}>
+                  Log Out
+                </NavLink>
+              ) : (
+                <>
+                  <NavLink
+                    to="/register-now"
+                    className="nav-link"
+                    style={{ marginRight: "10px" }}
+                  >
+                    Register Now
+                  </NavLink>
+                  <NavLink to="/login" className="nav-link">
+                    Log In
+                  </NavLink>
+                </>
+              )}
             </li>
           </ul>
         </div>

@@ -14,7 +14,7 @@ const BlogSIngleHero = () => {
             <h1 className="mb-3 bread">Blog Details</h1>
             <p className="breadcrumbs">
               <span className="mr-2">
-                <a href="index.html">
+                <a href="/">
                   Home <i className="ion-ios-arrow-forward"></i>
                 </a>
               </span>{" "}
