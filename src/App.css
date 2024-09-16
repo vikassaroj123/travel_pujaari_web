@@ -1,0 +1,69 @@
+/* Custom styles for react-calendar */
+.react-calendar {
+  border: none !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 10px !important;
+  padding: 10px !important;
+}
+
+.react-calendar__navigation {
+  display: flex !important;
+  justify-content: space-evenly !important; /* Ensures even spacing between buttons */
+  align-items: center !important; /* Vertically centers the content */
+  padding: 10px 0 !important;
+}
+
+.react-calendar__navigation button {
+  color: orange !important;
+  font-weight: bold !important;
+  border: none !important;
+  padding: 10px !important;
+  margin: 0 5px !important; /* Add spacing between buttons */
+  flex-grow: 1 !important; /* Ensure buttons have the same size */
+  text-align: center !important;
+  border-radius: 5px !important; /* Smooth rounded corners */
+}
+
+.react-calendar__tile--active {
+  background-color: #28a745 !important; /* Highlight active (selected) date */
+  color: white !important;
+  border-radius: 50% !important;
+}
+
+.react-calendar__tile {
+  padding: 10px !important;
+  color: #6c757d;
+}
+
+.react-calendar__month-view__weekdays {
+  font-weight: bold !important;
+  color: #6c757d !important;
+}
+
+.react-calendar__tile:disabled {
+  background-color: #f0f0f0 !important;
+}
+
+/* Profile section customizations */
+.profile-section {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.profile-section img {
+  width: 100px !important;
+  height: 100px !important;
+  margin-bottom: 10px !important;
+}
+
+@media (max-width: 768px) {
+  .react-calendar {
+    width: 100% !important;
+  }
+
+  .profile-section img {
+    width: 80px !important;
+    height: 80px !important;
+  }
+}

@@ -6,6 +6,7 @@ import About from "./pages/About.jsx";
 import Blog from "./pages/Blog.jsx";
 import BlogSingle from "./pages/BlogSingle.jsx";
 import Contact from "./pages/Contact.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
 import Home from "./pages/Home.jsx";
 import Login from "./pages/Login.jsx";
 import OurServices from "./pages/OurServices.jsx";
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register-now" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );

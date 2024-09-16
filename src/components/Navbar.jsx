@@ -129,9 +129,18 @@ const Navbar = () => {
 
               <li className="nav-item cta nav-r">
                 {user ? (
-                  <NavLink className="nav-link" onClick={handleLogout}>
-                    Log Out
-                  </NavLink>
+                  <>
+                    <NavLink
+                      to="/dashboard"
+                      className="nav-link nav-l"
+                      style={{ marginRight: "10px" }}
+                    >
+                      Dashboard
+                    </NavLink>
+                    <NavLink className="nav-link nav-l" onClick={handleLogout}>
+                      Log Out
+                    </NavLink>
+                  </>
                 ) : (
                   <>
                     <NavLink
