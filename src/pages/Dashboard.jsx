@@ -2,6 +2,10 @@ import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import Flight from "../components/dashboard/Flight";
+import Hotel from "../components/dashboard/Hotel";
+import Packages from "../components/dashboard/Packages";
+import Visa from "../components/dashboard/Visa";
 import { auth } from "../firebase";
 
 // Helper function to dynamically load external scripts
@@ -18,10 +22,11 @@ const loadScript = (src) => {
 
 const Dashboard = () => {
   const [date, setDate] = useState(new Date());
+  const [selectedComponent, setSelectedComponent] = useState("Flights");
+
   const handleLogout = () => {
     signOut(auth)
       .then(() => {
-        // Sign-out successful.
         console.log("User signed out");
       })
       .catch((error) => {
@@ -32,7 +37,6 @@ const Dashboard = () => {
   useEffect(() => {
     const loadExternalScripts = async () => {
       try {
-        // Load external JS files one by one
         await loadScript("/js/jquery-3.2.1.min.js");
         await loadScript("/js/jquery-migrate-3.0.1.min.js");
         await loadScript("/js/popper.min.js");
@@ -46,78 +50,123 @@ const Dashboard = () => {
         await loadScript("/js/jquery.animateNumber.min.js");
         await loadScript("/js/bootstrap-datepicker.js");
         await loadScript("/js/scrollax.min.js");
-        await loadScript("/js/main.js"); // Ensure this script initializes all components correctly
-
-        // Initialize any global plugins or re-initialize scripts if necessary
+        await loadScript("/js/main.js");
         console.log("Scripts loaded and initialized successfully!");
-
-        // Example: if you need to initialize a plugin or library manually after loading
-        // If your `main.js` contains initialization code, it might already handle this
       } catch (error) {
         console.error("Error loading external scripts:", error);
       }
     };
 
-    // Call the function to load scripts when the app loads
     loadExternalScripts();
-  }, []); // Empty dependency array means this runs once when the app loads
+  }, []);
 
-  // Format month and year (e.g., Sept '24)
-  const formatMonthYear = (locale, date) => {
-    const month = date.toLocaleString("default", { month: "short" }); // e.g., Sept
-    const year = date.getFullYear().toString().slice(-2); // e.g., 24
-    return `${month} '${year}`;
+  const renderComponent = () => {
+    switch (selectedComponent) {
+      case "Flights":
+        return <Flight />;
+      case "Hotels":
+        return <Hotel />;
+      case "Packages":
+        return <Packages />;
+      case "Visa":
+        return <Visa />;
+      default:
+        return <Flight />;
+    }
   };
 
   return (
     <div className="container-fluid">
       <div className="row vh-100">
         {/* First Sidebar - Navigation */}
-        <nav className="col-md-2 d-none d-md-block bg-dark text-white p-4">
-          <h2 className="text-light">Navigation</h2>
+        <div className="col-md-2 bg-dark text-white p-4 d-none d-md-block">
+          <h2 className="text-light">Dashboard</h2>
           <ul className="nav flex-column mt-4">
             <li className="nav-item">
-              <a className="nav-link text-light" href="/dashboard">
-                Dashboard
-              </a>
+              <button
+                className="nav-link text-light btn btn-link"
+                onClick={() => setSelectedComponent("Flights")}
+              >
+                Flights
+              </button>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-light" href="/ticket">
-                Tickets
-              </a>
+              <button
+                className="nav-link text-light btn btn-link"
+                onClick={() => setSelectedComponent("Hotels")}
+              >
+                Hotels
+              </button>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-light" href="/tansaction">
-                Transaction
-              </a>
+              <button
+                className="nav-link text-light btn btn-link"
+                onClick={() => setSelectedComponent("Packages")}
+              >
+                Packages
+              </button>
+            </li>
+            <li className="nav-item">
+              <button
+                className="nav-link text-light btn btn-link"
+                onClick={() => setSelectedComponent("Visa")}
+              >
+                Visa
+              </button>
             </li>
             <li className="nav-item">
               <a
-                className="nav-link text-light"
-                href="/"
+                className="nav-link text-light btn btn-link"
                 onClick={handleLogout}
+                href="/"
               >
                 Logout
               </a>
             </li>
           </ul>
-        </nav>
+        </div>
 
         {/* Main Content Area */}
-        <main className="col-md-7 bg-light p-4">
-          <h2 className="mb-4">Dashboard Content</h2>
-          <div className="p-4 bg-white shadow-sm rounded">
-            <p>
-              This is the main content area where you can display data, charts,
-              and other information.
-            </p>
-            {/* Add more detailed content here */}
-          </div>
-        </main>
+        <div className="col-md-7 bg-light p-4">
+          {/* Navbar for component selection */}
+          <nav className="mb-4" style={{ backgroundColor: "white" }}>
+            <ul className="d-flex">
+              {["Flights", "Hotels", "Packages", "Visa"].map((component) => (
+                <li
+                  key={component}
+                  className="nav-item"
+                  style={{
+                    marginRight: "10px",
+                    listStyleType: "none",
+                    outline: "none",
+                  }}
+                >
+                  <button
+                    className="nav-link"
+                    style={{
+                      borderBottomWidth:
+                        selectedComponent === component ? "2px" : "0",
+                      borderBottomColor: "#007bff",
+                      borderBottomStyle:
+                        selectedComponent === component ? "solid" : "none",
+                      color: "black",
+                      backgroundColor: "white",
+                      outline: "none",
+                      borderRadius: "0px",
+                    }}
+                    onClick={() => setSelectedComponent(component)}
+                  >
+                    {component}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          {renderComponent()} {/* Renders the selected component */}
+        </div>
 
         {/* Second Sidebar - Profile and Calendar */}
-        <aside className="col-md-3 bg-white p-4">
-          {/* Profile Section */}
+        <div className="col-md-3 bg-white p-4">
           <div className="d-flex align-items-center justify-content-center text-center mb-4">
             <img
               src="https://via.placeholder.com/80"
@@ -127,17 +176,20 @@ const Dashboard = () => {
             />
             <h5>Shivansh Gupta</h5>
           </div>
-
-          {/* Calendar Section */}
           <div>
             <h4 className="text-center mb-3">Calendar</h4>
             <Calendar
               onChange={setDate}
               value={date}
-              formatMonthYear={formatMonthYear}
+              formatMonthYear={(locale, date) =>
+                `${date.toLocaleString("default", { month: "short" })} '${date
+                  .getFullYear()
+                  .toString()
+                  .slice(-2)}`
+              }
             />
           </div>
-        </aside>
+        </div>
       </div>
     </div>
   );
