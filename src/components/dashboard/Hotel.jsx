@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import emailjs from "emailjs-com";
+import { useState } from "react";
 
 const Hotel = () => {
   const [city, setCity] = useState("");
@@ -14,10 +15,14 @@ const Hotel = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const form = e.target;
     const searchParams = {
       city,
       checkInDate,
       checkOutDate,
+      from_name: "Shivansh Gupta",
+      to_name: "Vikas",
+      message: "Hello",
       rooms,
       guests,
       area,
@@ -27,6 +32,20 @@ const Hotel = () => {
       breakfastIncluded,
     };
     console.log("Search Hotels with params:", searchParams);
+    emailjs
+      .send(
+        "service_yn5mtoc",
+        "template_7vjaro9",
+        searchParams,
+        "RXmUN7rgv7MKmFSpE"
+      )
+      .then((response) => {
+        console.log("Email sent successfully", response);
+        form.reset();
+      })
+      .catch((error) => {
+        console.error("Error sending email", error);
+      });
   };
 
   return (
@@ -166,34 +185,33 @@ const Hotel = () => {
         </div>
 
         {/* 5th row: Filters (Free Cancellation and Breakfast Included) */}
-        <div className="row mb-3">
-          <div className="col-md-6">
-            <div className="form-check">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="freeCancellation"
-                checked={freeCancellation}
-                onChange={() => setFreeCancellation(!freeCancellation)}
-              />
-              <label className="form-check-label" htmlFor="freeCancellation">
-                Free Cancellation
-              </label>
-            </div>
+        <h6>Other filters</h6>
+        <div className="d-flex">
+          <div className="d-flex form-check mr-3">
+            <input
+              type="checkbox"
+              className="form-check-input"
+              id="freeCancellation"
+              checked={freeCancellation}
+              style={{ transform: "scale(1.5)" }}
+              onChange={() => setFreeCancellation(!freeCancellation)}
+            />
+            <label className="form-check-label" htmlFor="freeCancellation">
+              Free Cancellation
+            </label>
           </div>
-          <div className="col-md-6">
-            <div className="form-check">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="breakfastIncluded"
-                checked={breakfastIncluded}
-                onChange={() => setBreakfastIncluded(!breakfastIncluded)}
-              />
-              <label className="form-check-label" htmlFor="breakfastIncluded">
-                Breakfast Included
-              </label>
-            </div>
+          <div className="d-flex form-check mr-3">
+            <input
+              type="checkbox"
+              className="form-check-input"
+              id="breakfastIncluded"
+              checked={breakfastIncluded}
+              style={{ transform: "scale(1.5)" }}
+              onChange={() => setBreakfastIncluded(!breakfastIncluded)}
+            />
+            <label className="form-check-label" htmlFor="breakfastIncluded">
+              Breakfast Included
+            </label>
           </div>
         </div>
 

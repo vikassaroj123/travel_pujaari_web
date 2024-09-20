@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import emailjs from "emailjs-com";
+import { useState } from "react";
 
 const Packages = () => {
   const [quoteType, setQuoteType] = useState("instant");
@@ -12,8 +13,12 @@ const Packages = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const form = e.target;
     const packageDetails = {
       quoteType,
+      from_name: "Shivansh Gupta",
+      to_name: "Vikas",
+      message: "Hello",
       destination,
       rooms,
       guests,
@@ -23,50 +28,63 @@ const Packages = () => {
       landOnly,
     };
     console.log("Get Instant Quotes with params:", packageDetails);
+    emailjs
+      .send(
+        "service_yn5mtoc",
+        "template_7vjaro9",
+        packageDetails,
+        "RXmUN7rgv7MKmFSpE"
+      )
+      .then((response) => {
+        console.log("Email sent successfully", response);
+        form.reset();
+      })
+      .catch((error) => {
+        console.error("Error sending email", error);
+      });
   };
 
   return (
     <div className="p-4 bg-white shadow-sm rounded">
       <form onSubmit={handleSubmit}>
         {/* 1st row: Radio buttons for Instant Quotes and Offline Inquiry */}
-        <div className="row mb-3">
-          <div className="col-md-12">
-            <div className="form-group">
-              <label>Quote Type</label>
-              <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="quoteType"
-                  id="instantQuote"
-                  value="instant"
-                  checked={quoteType === "instant"}
-                  onChange={() => setQuoteType("instant")}
-                />
-                <label className="form-check-label" htmlFor="instantQuote">
-                  Instant Quotes
-                </label>
-              </div>
-              <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="quoteType"
-                  id="offlineInquiry"
-                  value="offline"
-                  checked={quoteType === "offline"}
-                  onChange={() => setQuoteType("offline")}
-                />
-                <label className="form-check-label" htmlFor="offlineInquiry">
-                  Offline Inquiry
-                </label>
-              </div>
+        <div className="d-flex mb-1">
+          <div className="d-flex form-group">
+            <div className="d-flex form-check mr-3">
+              <input
+                className="form-check-input"
+                type="radio"
+                name="quoteType"
+                id="instantQuote"
+                value="instant"
+                checked={quoteType === "instant"}
+                style={{ transform: "scale(1.5)" }}
+                onChange={() => setQuoteType("instant")}
+              />
+              <label className="form-check-label" htmlFor="instantQuote">
+                Instant Quotes
+              </label>
+            </div>
+            <div className="d-flex form-check">
+              <input
+                className="form-check-input"
+                type="radio"
+                name="quoteType"
+                id="offlineInquiry"
+                value="offline"
+                checked={quoteType === "offline"}
+                style={{ transform: "scale(1.5)" }}
+                onChange={() => setQuoteType("offline")}
+              />
+              <label className="form-check-label" htmlFor="offlineInquiry">
+                Offline Inquiry
+              </label>
             </div>
           </div>
         </div>
 
         {/* 2nd row: Enter destination */}
-        <div className="row mb-3">
+        <div className="row mb-1">
           <div className="col-md-12">
             <div className="form-group">
               <label htmlFor="destination">Enter Destination</label>
@@ -83,7 +101,7 @@ const Packages = () => {
         </div>
 
         {/* 3rd row: Select rooms/guests and select hotel rating */}
-        <div className="row mb-3">
+        <div className="row mb-1">
           <div className="col-md-6">
             <div className="form-group">
               <label htmlFor="rooms">Rooms</label>
@@ -121,7 +139,7 @@ const Packages = () => {
         </div>
 
         {/* Hotel Rating */}
-        <div className="row mb-3">
+        <div className="row mb-1">
           <div className="col-md-12">
             <div className="form-group">
               <label htmlFor="hotelRating">Hotel Rating</label>
@@ -143,7 +161,7 @@ const Packages = () => {
         </div>
 
         {/* 4th row: Departure date and Number of nights */}
-        <div className="row mb-3">
+        <div className="row mb-1">
           <div className="col-md-6">
             <div className="form-group">
               <label htmlFor="departureDate">Departure Date</label>
@@ -172,20 +190,19 @@ const Packages = () => {
         </div>
 
         {/* 5th row: Land only checkbox */}
-        <div className="row mb-3">
-          <div className="col-md-12">
-            <div className="form-check">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="landOnly"
-                checked={landOnly}
-                onChange={() => setLandOnly(!landOnly)}
-              />
-              <label className="form-check-label" htmlFor="landOnly">
-                Land Only
-              </label>
-            </div>
+        <div className="d-flex">
+          <div className="d-flex form-check">
+            <input
+              type="checkbox"
+              className="form-check-input"
+              id="landOnly"
+              checked={landOnly}
+              style={{ transform: "scale(1.5)" }}
+              onChange={() => setLandOnly(!landOnly)}
+            />
+            <label className="form-check-label" htmlFor="landOnly">
+              Land Only
+            </label>
           </div>
         </div>
 

@@ -31,7 +31,6 @@ const Flight = () => {
       )
       .then((response) => {
         console.log("Email sent successfully", response);
-        // Optionally, you can reset the form or show a success message
         form.reset();
       })
       .catch((error) => {
@@ -45,28 +44,49 @@ const Flight = () => {
       <div className="d-flex mb-3">
         <input
           type="radio"
-          name="oneWay"
+          name="tripType"
           id="oneWay"
           value="oneWay"
+          style={{ transform: "scale(1.5)", marginRight: "6px" }}
           onChange={() => setTripType("oneWay")}
-        />{" "}
-        <label>One Way</label>
+        />
+        <label
+          htmlFor="oneWay"
+          style={{ fontSize: "15px", margin: "6px 15px 0 0 " }}
+        >
+          One Way
+        </label>
+
         <input
           type="radio"
-          name="roundTrip"
+          name="tripType"
           id="roundTrip"
           value="roundTrip"
+          style={{ transform: "scale(1.5)", marginRight: "6px" }}
           onChange={() => setTripType("roundTrip")}
-        />{" "}
-        <label>Round Trip</label>
+          defaultChecked
+        />
+        <label
+          htmlFor="roundTrip"
+          style={{ fontSize: "15px", margin: "6px 15px 0 0 " }}
+        >
+          Round Trip
+        </label>
+
         <input
           type="radio"
-          name="multicity"
+          name="tripType"
           id="multicity"
           value="multicity"
+          style={{ transform: "scale(1.5)", marginRight: "6px" }}
           onChange={() => setTripType("multicity")}
-        />{" "}
-        <label>Multicity</label>
+        />
+        <label
+          htmlFor="multicity"
+          style={{ fontSize: "15px", marginTop: "6px" }}
+        >
+          Multicity
+        </label>
       </div>
 
       {/* Flight Search Form */}
