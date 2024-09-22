@@ -10520,6 +10520,7 @@ h5,
 }
 
 .ftco-navbar-light {
+  width: 100% !important;
   padding: 15px;
   background: #00245c !important;
   /* background-color: white !important; */
@@ -10558,6 +10559,7 @@ h5,
   }
 }
 .ftco-navbar-light .navbar-nav {
+  gap: 25px !important;
   margin-right: 0;
 }
 @media (max-width: 991.98px) {
@@ -10571,8 +10573,8 @@ h5,
   font-size: 16px;
   padding-top: 1rem;
   /* padding-bottom: 1.5rem; */
-  padding-left: 15px;
-  padding-right: 21px;
+  /* padding-left: 15px;
+  padding-right: 21px; */
   color: white;
   font-weight: 400;
   opacity: 1 !important;
@@ -13185,7 +13187,7 @@ label {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin-top: 8%;
+  margin-top: 1%;
 }
 .Why_Choose_container {
   width: 90%;
@@ -13384,7 +13386,7 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 68vh;
   padding: 0 20px;
 }
 

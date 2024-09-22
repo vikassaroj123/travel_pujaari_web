@@ -2,10 +2,9 @@ import React, { useEffect } from "react";
 import AgentRegistration from "../components/AgentRegistration";
 import Footer from "../components/Footer";
 import RegisterHeroSec from "../components/RegisterHeroSec";
-import RegisterNavbar from "../components/RegisterNavbar";
 import TravelAgent from "../components/TravelAgent";
+import Navbar from "../components/Navbar";
 
-// Helper function to dynamically load external scripts
 const loadScript = (src) => {
   return new Promise((resolve, reject) => {
     const script = document.createElement("script");
@@ -21,7 +20,6 @@ const Register = () => {
   useEffect(() => {
     const loadExternalScripts = async () => {
       try {
-        // Load external JS files one by one
         await loadScript("/js/jquery-3.2.1.min.js");
         await loadScript("/js/jquery-migrate-3.0.1.min.js");
         await loadScript("/js/popper.min.js");
@@ -35,24 +33,17 @@ const Register = () => {
         await loadScript("/js/jquery.animateNumber.min.js");
         await loadScript("/js/bootstrap-datepicker.js");
         await loadScript("/js/scrollax.min.js");
-        await loadScript("/js/main.js"); // Ensure this script initializes all components correctly
-
-        // Initialize any global plugins or re-initialize scripts if necessary
+        await loadScript("/js/main.js");
         console.log("Scripts loaded and initialized successfully!");
-
-        // Example: if you need to initialize a plugin or library manually after loading
-        // If your `main.js` contains initialization code, it might already handle this
       } catch (error) {
         console.error("Error loading external scripts:", error);
       }
     };
-
-    // Call the function to load scripts when the app loads
     loadExternalScripts();
-  }, []); // Empty dependency array means this runs once when the app loads
+  }, []);
   return (
     <div>
-      <RegisterNavbar />
+      <Navbar />
       <RegisterHeroSec />
       <AgentRegistration />
       <TravelAgent />z
