@@ -1,5 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -18,17 +21,17 @@ const Footer = () => {
               <ul className="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li className="ftco-animate">
                   <a href="#">
-                    <span className="icon-twitter"></span>
+                  <FaXTwitter size={30} style={{ marginTop: "10px" }} />
                   </a>
                 </li>
                 <li className="ftco-animate">
                   <a href="#">
-                    <span className="icon-facebook"></span>
+                   < FaFacebookF size={25} style={{ marginTop: "10px" }} />
                   </a>
                 </li>
                 <li className="ftco-animate">
                   <a href="#">
-                    <span className="icon-instagram"></span>
+                    < FaInstagram  size={30} style={{ marginTop: "10px" }}/>
                   </a>
                 </li>
               </ul>
@@ -124,7 +127,7 @@ const Footer = () => {
               Copyright &copy;{currentYear} All rights reserved Travel Pujaari |
               Developed by{" "}
               <a
-                href="https://web-inix.vercel.app/"
+                href="https://www.webinix.in"
                 target="_blank"
                 rel="noopener noreferrer"
               >

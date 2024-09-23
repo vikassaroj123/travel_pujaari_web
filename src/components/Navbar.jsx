@@ -1,7 +1,8 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { auth } from "../firebase.js"; // Adjust the path to your firebase.js
+import { auth } from "../firebase.js";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const Navbar = () => {
   const [user, setUser] = useState(null);
@@ -17,7 +18,6 @@ const Navbar = () => {
   const handleLogout = () => {
     signOut(auth)
       .then(() => {
-        // Sign-out successful.
         console.log("User signed out");
       })
       .catch((error) => {
@@ -27,14 +27,15 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Internal CSS for media queries */}
       <style>{`
         @media (min-width: 992px) {
           .navbar-collapse {
             justify-content: center;
           }
           .nav-r {
-          display:flex;
+            gap: 7px;
+            padding-right: 4px;
+            display: flex;
             justify-content: flex-end;
             margin-left: auto;
           }
@@ -61,11 +62,10 @@ const Navbar = () => {
         id="ftco-navbar"
       >
         <div className="container nv-container">
-          {/* Logo on the left */}
           <NavLink className="navbar-brand" to="/">
-            <img src="/images/logo.png" alt="Travel Pujari" />
+            <img src="/images/logo.png" alt="Travel Pujaari" />
           </NavLink>
-
+          
           <button
             className="navbar-toggler"
             type="button"
@@ -75,11 +75,9 @@ const Navbar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="oi oi-menu"></span> Menu
+          <RxHamburgerMenu size={35} style={{ color: 'white' }} />
           </button>
-
           <div className="collapse navbar-collapse" id="ftco-nav">
-            {/* Centered Nav Items */}
             <ul className="navbar-nav ml-auto">
               <li
                 className={`nav-item ${
@@ -149,11 +147,11 @@ const Navbar = () => {
                       style={{ marginRight: "10px" }}
                     >
                       Register Now
-                      <span className="nav-s">New Agent Registration!</span>
+                      {/* <span className="nav-s">New Agent Registration!</span> */}
                     </NavLink>
                     <NavLink to="/login" className="nav-link nav-l">
                       Log In
-                      <span className="nav-s">Already Registered?</span>
+                      {/* <span className="nav-s">Already Registered?</span> */}
                     </NavLink>
                   </>
                 )}
