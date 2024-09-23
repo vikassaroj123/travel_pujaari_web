@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import AgentRegistration from "../components/AgentRegistration";
 import Footer from "../components/Footer";
-import RegisterHeroSec from "../components/RegisterHeroSec";
-import RegisterNavbar from "../components/RegisterNavbar";
-import TravelAgent from "../components/TravelAgent";
+import AgentRegistration from "../components/register/AgentRegistration";
+import RegisterHeroSec from "../components/register/RegisterHeroSec";
+import RegisterNavbar from "../components/register/RegisterNavbar";
+import TravelAgent from "../components/register/TravelAgent";
 
 // Helper function to dynamically load external scripts
 const loadScript = (src) => {
@@ -55,7 +55,7 @@ const Register = () => {
       <RegisterNavbar />
       <RegisterHeroSec />
       <AgentRegistration />
-      <TravelAgent />z
+      <TravelAgent />
       <Footer />
     </div>
   );

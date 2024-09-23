@@ -1,9 +1,40 @@
 import emailjs from "emailjs-com";
-import { useState } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
+import { useEffect, useState } from "react";
+import { auth, db } from "../../firebase";
 
 const Flight = () => {
   const [tripType, setTripType] = useState("roundTrip"); // Default is round trip
+  const [currentUser, setCurrentUser] = useState(null);
+  const [userData, setUserData] = useState(null);
 
+  // Listen for Firebase auth changes
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setCurrentUser(user || null);
+      console.log(currentUser);
+    });
+
+    return () => unsubscribe();
+  }, [currentUser]);
+
+  // Fetch user data from Firestore
+  useEffect(() => {
+    const fetchUserData = async () => {
+      if (currentUser) {
+        const userDocRef = doc(db, "users", currentUser.uid);
+        const userDocSnap = await getDoc(userDocRef);
+        if (userDocSnap.exists()) {
+          setUserData(userDocSnap.data());
+        } else {
+          console.log("No such user document!");
+        }
+      }
+    };
+
+    fetchUserData();
+  }, [currentUser]);
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -11,7 +42,9 @@ const Flight = () => {
 
     const formData = {
       tripType,
-      from_name: "Shivansh Gupta",
+      from_name: currentUser?.displayName || "User",
+      email: currentUser?.email,
+      mobile: userData?.mobile || "N/A",
       to_name: "Vikas",
       message: "Hello",
       fromLocation: form.fromLocation.value,

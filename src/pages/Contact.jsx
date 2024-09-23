@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import ContactFeaturesContainer from "../components/ContactFeaturesSection";
-import ContactFormSection from "../components/ContactFormSection";
-import ContactHero from "../components/ContactHero";
-import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import ContactFeaturesContainer from "../components/contact/ContactFeaturesSection";
+import ContactFormSection from "../components/contact/ContactFormSection";
+import ContactHero from "../components/contact/ContactHero";
+import ContactSection from "../components/contact/ContactSection";
 
 // Helper function to dynamically load external scripts
 const loadScript = (src) => {

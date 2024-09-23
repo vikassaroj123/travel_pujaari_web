@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import OurFeatures from "../components/OurFeatures";
-import OurServicesHero from "../components/OurServicesHero";
-import ProductContainer from "../components/ProductConatiner";
-import ServicePartner from "../components/ServicePartner";
+import OurFeatures from "../components/ourServices/OurFeatures";
+import OurServicesHero from "../components/ourServices/OurServicesHero";
+import ProductContainer from "../components/ourServices/ProductConatiner";
+import ServicePartner from "../components/ourServices/ServicePartner";
 
 // Helper function to dynamically load external scripts
 const loadScript = (src) => {

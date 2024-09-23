@@ -1,4 +1,5 @@
-import { signOut } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
@@ -6,7 +7,7 @@ import Flight from "../components/dashboard/Flight";
 import Hotel from "../components/dashboard/Hotel";
 import Packages from "../components/dashboard/Packages";
 import Visa from "../components/dashboard/Visa";
-import { auth } from "../firebase";
+import { auth, db } from "../firebase";
 
 // Helper function to dynamically load external scripts
 const loadScript = (src) => {
@@ -23,6 +24,35 @@ const loadScript = (src) => {
 const Dashboard = () => {
   const [date, setDate] = useState(new Date());
   const [selectedComponent, setSelectedComponent] = useState("Flights");
+  const [currentUser, setCurrentUser] = useState(null);
+  const [userData, setUserData] = useState(null);
+
+  // Listen for Firebase auth changes
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setCurrentUser(user || null);
+      console.log(currentUser);
+    });
+
+    return () => unsubscribe();
+  }, [currentUser]);
+
+  // Fetch user data from Firestore
+  useEffect(() => {
+    const fetchUserData = async () => {
+      if (currentUser) {
+        const userDocRef = doc(db, "users", currentUser.uid);
+        const userDocSnap = await getDoc(userDocRef);
+        if (userDocSnap.exists()) {
+          setUserData(userDocSnap.data());
+        } else {
+          console.log("No such user document!");
+        }
+      }
+    };
+
+    fetchUserData();
+  }, [currentUser]);
 
   const handleLogout = () => {
     signOut(auth)
@@ -168,13 +198,13 @@ const Dashboard = () => {
         {/* Second Sidebar - Profile and Calendar */}
         <div className="col-md-3 bg-white p-4">
           <div className="d-flex align-items-center justify-content-center text-center mb-4">
-            <img
+            {/* <img
               src="https://via.placeholder.com/80"
               alt="Profile"
               className="rounded-circle img-fluid mb-3"
               style={{ width: "80px", height: "80px" }}
-            />
-            <h5>Shivansh Gupta</h5>
+            /> */}
+            <h5>{currentUser?.displayName}</h5>
           </div>
           <div>
             <h4 className="text-center mb-3">Calendar</h4>

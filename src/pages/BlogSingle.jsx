@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import BlogSIngleHero from "../components/BlogSIngleHero";
-import BlogSingleSec from "../components/BlogSingleSec";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import BlogSIngleHero from "../components/blog/BlogSIngleHero";
+import BlogSingleSec from "../components/blog/BlogSingleSec";
 
 // Helper function to dynamically load external scripts
 const loadScript = (src) => {

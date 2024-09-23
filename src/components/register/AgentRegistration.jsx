@@ -2,7 +2,7 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // For redirection
-import { auth, db } from "../firebase.js"; // Firebase auth and Firestore
+import { auth, db } from "../../firebase.js"; // Firebase auth and Firestore
 
 const AgentRegistration = () => {
   const [formData, setFormData] = useState({
@@ -39,7 +39,7 @@ const AgentRegistration = () => {
     setError("");
     setSuccess(false);
     try {
-      const { email, password, firstName } = formData;
+      const { email, password } = formData;
 
       // Firebase registration with email and password
       const userCredential = await createUserWithEmailAndPassword(
@@ -50,7 +50,7 @@ const AgentRegistration = () => {
       const user = userCredential.user;
       // Update user's displayName with firstName
       await updateProfile(user, {
-        displayName: formData.firstName,
+        displayName: formData.firstName + " " + formData.lastName,
       });
 
       // Save additional user information in Firestore

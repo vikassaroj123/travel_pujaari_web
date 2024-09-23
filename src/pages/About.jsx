@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
-import AboutHeroSec from "../components/AboutHeroSec";
-import AboutServicesSec from "../components/AboutServicesSec";
+
 import CounterSection from "../components/CounterSection";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Testimonials from "../components/Testimonials";
+import AboutHeroSec from "../components/about/AboutHeroSec";
+import AboutServicesSec from "../components/about/AboutServicesSec";
 
 // Helper function to dynamically load external scripts
 const loadScript = (src) => {

@@ -1,14 +1,14 @@
 // src/pages/Home.jsx
 import React, { useEffect } from "react";
-import CounterSection from "../components/CounterSection.jsx";
-import Footer from "../components/Footer.jsx";
-import HeroSection from "../components/HeroSection.jsx";
-import Navbar from "../components/Navbar.jsx"; // Adjust path based on where Navbar is located
-import OurProduct from "../components/OurProduct.jsx";
-import RecentPosts from "../components/RecentPosts.jsx";
-import Testimonials from "../components/Testimonials.jsx";
-import TourDestinations from "../components/TourDestinations.jsx";
-import WhyChoose from "../components/WhyChoose.jsx";
+import CounterSection from "../components/CounterSection";
+import Footer from "../components/Footer";
+import HeroSection from "../components/home/HeroSection";
+import OurProduct from "../components/home/OurProduct";
+import RecentPosts from "../components/home/RecentPosts";
+import TourDestinations from "../components/home/TourDestinations";
+import WhyChoose from "../components/home/WhyChoose";
+import Navbar from "../components/Navbar";
+import Testimonials from "../components/Testimonials";
 
 // Helper function to dynamically load external scripts
 const loadScript = (src) => {
