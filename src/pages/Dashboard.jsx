@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 import React, { useEffect, useState } from "react";

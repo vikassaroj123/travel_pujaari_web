@@ -1,15 +1,9 @@
 import React, { useEffect } from "react";
 import Footer from "../components/Footer";
-<<<<<<< HEAD
+import Navbar from "../components/Navbar";
 import AgentRegistration from "../components/register/AgentRegistration";
 import RegisterHeroSec from "../components/register/RegisterHeroSec";
-import RegisterNavbar from "../components/register/RegisterNavbar";
 import TravelAgent from "../components/register/TravelAgent";
-=======
-import RegisterHeroSec from "../components/RegisterHeroSec";
-import TravelAgent from "../components/TravelAgent";
-import Navbar from "../components/Navbar";
->>>>>>> 3d81b470fd1953d3780319d5d04d93c5690555e4
 
 const loadScript = (src) => {
   return new Promise((resolve, reject) => {
